@@ -32,13 +32,13 @@
           <div class="info">
             <img [src]="userProfile?.avatar_url" class="user-image" />
             <div class="name-info">
-              <span class="name">{{ userProfile?.name || "Guilherme" }}</span>
+              <span class="name">{{ userProfile?.name || "-" }}</span>
               <span class="login">{{
-                userProfile?.login ? "@" + userProfile.login : "@guilherme"
+                userProfile?.login ? "@" + userProfile.login : "-"
               }}</span>
             </div>
           </div>
-          <span class="bio">{{ userProfile?.bio || "descrição" }}</span>
+          <span class="bio">{{ userProfile?.bio || "-" }}</span>
         </div>
 
         <div class="user-info">
@@ -56,23 +56,31 @@
         <div class="user-info">
           <div class="info">
             <i class="pi pi-building"></i>
-            <span>{{ userProfile?.company || "Atman" }}</span>
+            <span>{{ userProfile?.company || "-" }}</span>
           </div>
           <div class="info">
             <i class="pi pi-map-marker"></i>
-            <span>{{ userProfile?.location || "Vitoria-ES" }}</span>
+            <span>{{ userProfile?.location || "-" }}</span>
           </div>
           <div class="info">
             <i class="pi pi-envelope"></i>
-            <span>{{ userProfile?.email || "guilherme@gmail.com" }}</span>
+            <span>{{ userProfile?.email || "-" }}</span>
           </div>
-          <div class="info">
+          <div
+            class="info cursor-pointer"
+            *ngIf="userProfile?.blog"
+            (click)="goToBlogProfile()"
+          >
             <i class="pi pi-link"></i>
-            <span>{{ userProfile?.blog || "site.com" }}</span>
+            <span>{{ userProfile?.blog }}</span>
           </div>
-          <div class="info">
+          <div
+            class="info cursor-pointer"
+            *ngIf="userProfile?.twitter_username"
+            (click)="goToTwitterProfile()"
+          >
             <i class="pi pi-twitter"></i>
-            <span>{{ userProfile?.twitter_username || "@guigabodart" }}</span>
+            <span>{{ userProfile?.twitter_username }}</span>
           </div>
         </div>
       </div>
@@ -89,6 +97,30 @@
       </div>
     </div>
 
-    <div class="repo-list"></div>
+    <div class="repo-list">
+      <ng-container *ngFor="let repo of profileRepos">
+        <div class="repo-info">
+          <span class="repo-title" (click)="goToGithubRepo(repo)">{{
+            repo?.name || ""
+          }}</span>
+
+          <span class="repo-description">
+            {{ repo?.description || "" }}
+          </span>
+
+          <div class="repo-row">
+            <i class="pi pi-star"></i>
+            <span>{{ repo?.stargazers_count }}</span>
+            <span>•</span>
+            <span>{{
+              repo?.updated_at
+                ? "Atualizado em " +
+                  (repo?.updated_at | date : "dd/MM/yyyy HH:mm")
+                : "Sem atualização"
+            }}</span>
+          </div>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>

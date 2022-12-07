@@ -15,6 +15,7 @@
         [(ngModel)]="userName"
         placeholder="Search"
         [ngClass]="{ 'input-error': textError }"
+        (keydown.enter)="searchUserProfile()"
       />
     </span>
     <button

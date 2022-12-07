@@ -2,7 +2,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
   background-color: #fcfcfc;
 }
 
@@ -48,7 +48,6 @@
 
 .body-profile {
   display: flex;
-  gap: 32px;
 }
 
 .user-perfil {
@@ -131,4 +130,51 @@
 }
 
 .repo-list {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-height: 77vh;
+  overflow: auto;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 16px;
+}
+
+.repo-info {
+  border-bottom: 1px #ccc solid;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.repo-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  color: #171823;
+  cursor: pointer;
+}
+
+.repo-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #4a5568;
+}
+
+.repo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #4a5568;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

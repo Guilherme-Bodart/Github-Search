@@ -5,16 +5,19 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: '',
-    loadChildren: () => import('./search-github/search-github.module').then((m) => m.SearchGithubModule),
+    loadChildren: () =>
+      import('./search-github/search-github.module').then(
+        (m) => m.SearchGithubModule
+      ),
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

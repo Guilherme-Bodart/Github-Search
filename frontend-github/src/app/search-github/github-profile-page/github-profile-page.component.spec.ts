@@ -8,9 +8,8 @@ describe('GithubProfilePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GithubProfilePageComponent ]
-    })
-    .compileComponents();
+      declarations: [GithubProfilePageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GithubProfilePageComponent);
     component = fixture.componentInstance;

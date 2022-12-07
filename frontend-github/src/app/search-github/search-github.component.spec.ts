@@ -8,9 +8,8 @@ describe('SearchGithubComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchGithubComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchGithubComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SearchGithubComponent);
     component = fixture.componentInstance;

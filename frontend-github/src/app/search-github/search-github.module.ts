@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { GithubProfilePageComponent } from './github-profile-page/github-profile-page.component';
 import { SearchGithubComponent } from './search-github.component';
 import { SearchPageComponent } from './search-page/search-page.component';
-import { GithubProfilePageComponent } from './github-profile-page/github-profile-page.component';
-import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext'
-import { ButtonModule } from 'primeng/button'
 
 const routeConfig: Routes = [
   {
@@ -17,13 +17,13 @@ const routeConfig: Routes = [
     path: 'perfil',
     component: GithubProfilePageComponent,
   },
-]
+];
 
 @NgModule({
   declarations: [
     SearchGithubComponent,
     SearchPageComponent,
-    GithubProfilePageComponent
+    GithubProfilePageComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +31,6 @@ const routeConfig: Routes = [
     FormsModule,
     InputTextModule,
     ButtonModule,
-  ]
+  ],
 })
-export class SearchGithubModule { }
+export class SearchGithubModule {}

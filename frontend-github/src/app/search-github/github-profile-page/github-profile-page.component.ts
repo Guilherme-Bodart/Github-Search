@@ -9,11 +9,11 @@ import { GithubService } from 'src/app/services/github.service';
   styleUrls: ['./github-profile-page.component.css'],
 })
 export class GithubProfilePageComponent implements OnInit {
-  userName = 'Guilherme-Bodart';
+  userName = '';
   textError = false;
   userProfile: GithubProfile = new GithubProfile({});
   profileRepos: Array<ProfileRepos> = [];
-  limitTime = true;
+  limitTimeReq = true;
 
   constructor(
     private _githubService: GithubService,
@@ -22,27 +22,32 @@ export class GithubProfilePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.userName =
-    //   this._activatedRoute.snapshot.queryParamMap.get('username') || '';
-    // this.searchUserProfile();
+    this.userName =
+      this._activatedRoute.snapshot.queryParamMap.get('username') || '';
+    this.searchUserProfile();
   }
 
   searchUserProfile() {
-    if (this.userName && this.limitTime) {
+    if (this.userName && this.limitTimeReq) {
       this._githubService.getGithubProfile(this.userName).subscribe(
         (res) => {
           this.userProfile = new GithubProfile(res as GithubProfile);
-          console.log(this.userProfile);
-
           this._githubService
             .getGithubUserRepos(this.userName)
             .subscribe((res) => {
               this.profileRepos = res as Array<ProfileRepos>;
+              this.profileRepos.sort((a, b) => {
+                return a.stargazers_count > b.stargazers_count
+                  ? -1
+                  : a.stargazers_count < b.stargazers_count
+                  ? 1
+                  : 0;
+              });
               this.textError = false;
-              this.limitTime = false;
+              this.limitTimeReq = false;
               setTimeout(() => {
-                this.limitTime = true;
-              }, 4000);
+                this.limitTimeReq = true;
+              }, 500);
               this._router.navigate(['/perfil'], {
                 queryParams: { username: this.userName },
               });
@@ -52,11 +57,26 @@ export class GithubProfilePageComponent implements OnInit {
           this.textError = true;
         }
       );
+    } else if (!this.userName) {
+      this._router.navigate(['/home']);
     }
   }
 
-  goToGithubProfile(){
+  goToGithubProfile() {
     const url = 'https://github.com/' + this.userName;
     window.location.href = url;
+  }
+
+  goToGithubRepo(repo: ProfileRepos) {
+    window.location.href = repo.html_url;
+  }
+
+  goToTwitterProfile() {
+    const url = 'https://twitter.com/' + this.userProfile.twitter_username;
+    window.location.href = url;
+  }
+
+  goToBlogProfile() {
+    window.location.href = this.userProfile.blog;
   }
 }

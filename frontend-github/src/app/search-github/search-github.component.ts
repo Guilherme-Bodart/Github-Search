@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { GithubProfile, ProfileRepos } from '../models/github';
-import { GithubProfilePageComponent } from './github-profile-page/github-profile-page.component';
-import { SearchPageComponent } from './search-page/search-page.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-search-github',
