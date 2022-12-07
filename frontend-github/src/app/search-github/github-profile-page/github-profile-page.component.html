@@ -1,1 +1,94 @@
-<p>github-profile-page works!</p>
+<div class="body-complete">
+  <div class="header">
+    <div class="row-search">
+      <span class="title blue">Search</span>
+      <span class="title purple">d_evs</span>
+    </div>
+
+    <div>
+      <span class="p-input-icon-left">
+        <i
+          class="pi pi-search"
+          [ngStyle]="{ color: textError ? '#ff6259' : '' }"
+        >
+        </i>
+        <input
+          type="text"
+          class="search-input"
+          pInputText
+          [(ngModel)]="userName"
+          placeholder="Search"
+          [ngClass]="{ 'input-error': textError }"
+          (keydown.enter)="searchUserProfile()"
+        />
+      </span>
+    </div>
+  </div>
+
+  <div class="body-profile">
+    <div class="user-perfil">
+      <div class="box-perfil">
+        <div class="user-info">
+          <div class="info">
+            <img [src]="userProfile?.avatar_url" class="user-image" />
+            <div class="name-info">
+              <span class="name">{{ userProfile?.name || "Guilherme" }}</span>
+              <span class="login">{{
+                userProfile?.login ? "@" + userProfile.login : "@guilherme"
+              }}</span>
+            </div>
+          </div>
+          <span class="bio">{{ userProfile?.bio || "descrição" }}</span>
+        </div>
+
+        <div class="user-info">
+          <div class="info">
+            <i class="pi pi-users"></i>
+            <span>{{ userProfile?.followers + " seguidores" }}</span>
+          </div>
+
+          <div class="info">
+            <i class="pi pi-heart"></i>
+            <span>{{ userProfile?.following + " seguindo" }}</span>
+          </div>
+        </div>
+
+        <div class="user-info">
+          <div class="info">
+            <i class="pi pi-building"></i>
+            <span>{{ userProfile?.company || "Atman" }}</span>
+          </div>
+          <div class="info">
+            <i class="pi pi-map-marker"></i>
+            <span>{{ userProfile?.location || "Vitoria-ES" }}</span>
+          </div>
+          <div class="info">
+            <i class="pi pi-envelope"></i>
+            <span>{{ userProfile?.email || "guilherme@gmail.com" }}</span>
+          </div>
+          <div class="info">
+            <i class="pi pi-link"></i>
+            <span>{{ userProfile?.blog || "site.com" }}</span>
+          </div>
+          <div class="info">
+            <i class="pi pi-twitter"></i>
+            <span>{{ userProfile?.twitter_username || "@guigabodart" }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="div-button">
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Contato"
+          class="p-button-help contact-button"
+          (click)="goToGithubProfile()"
+        ></button>
+      </div>
+    </div>
+
+    <div class="repo-list"></div>
+  </div>
+</div>

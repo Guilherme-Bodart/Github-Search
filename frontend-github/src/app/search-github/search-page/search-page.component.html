@@ -1,1 +1,33 @@
-<p>search-page works!</p>
+<div class="center-body">
+  <div class="row-search">
+    <span class="title blue">Search</span>
+    <span class="title purple">d_evs</span>
+  </div>
+
+  <div class="row-search">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search" [ngStyle]="{ color: textError ? '#ff6259' : '' }">
+      </i>
+      <input
+        type="text"
+        class="search-input"
+        pInputText
+        [(ngModel)]="userName"
+        placeholder="Search"
+        [ngClass]="{ 'input-error': textError }"
+      />
+    </span>
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Search"
+      class="p-button-help search-button"
+      (click)="searchUserProfile()"
+    ></button>
+  </div>
+
+  <div class="text-error" *ngIf="textError">
+    Usuário não encontrado, pesquise novamente.
+  </div>
+</div>

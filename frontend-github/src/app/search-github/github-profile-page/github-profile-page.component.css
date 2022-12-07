@@ -1,0 +1,134 @@
+.body-complete {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  background-color: #fcfcfc;
+}
+
+.header {
+  height: 88px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.row-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  height: 44px;
+  margin: 8px;
+}
+
+.blue {
+  color: #0069ca;
+}
+
+.purple {
+  color: #8c19d2;
+}
+
+.search-input {
+  width: 592px;
+  height: 48px;
+}
+
+.input-error {
+  border-color: var(--red-400) !important;
+}
+
+.body-profile {
+  display: flex;
+  gap: 32px;
+}
+
+.user-perfil {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 33%;
+  gap: 40px;
+  padding-left: 70px;
+}
+
+.box-perfil {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 24px;
+  width: 280px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.user-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.name-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #4a5568;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #171923;
+  line-height: 120%;
+}
+
+.login {
+  font-weight: 400;
+  font-size: 14px;
+  color: #a0aec0;
+  line-height: 150%;
+}
+
+.bio {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #4a5568;
+}
+
+.div-button {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.contact-button {
+  width: 280px;
+  height: 48px;
+}
+
+.repo-list {
+}

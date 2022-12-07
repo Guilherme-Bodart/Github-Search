@@ -8,12 +8,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '**',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
+    path: '',
     loadChildren: () => import('./search-github/search-github.module').then((m) => m.SearchGithubModule),
   },
 ];
