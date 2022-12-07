@@ -10,7 +10,8 @@ Rode `npm install` para download das bibliotecas utilizadas, foi utilizada a Pri
 Rode `ng serve` para criar o server de desenvolvimento, ficará em `http://localhost:4200/`, a aplicação cria o build na primeira vez, mas caso precise, rode `ng build`, projeto foi gerado com o angular versão 15.0.2.
 
 Utilizei a libs PrimeNG, primeiramente utilizaria a MaterialUI, mas as cores não combinavam muito, ai fui ver a PrimeNG, tinha as cores e o melhor era o Input que conseguia por um icone dentro de maneira fácil, uma coisa chata que tem usar posição absoluta e outras coisas para se fazer, e os componentes era mais parecidos com o que pedia e pra mim mais agradáveis, usei os ícones do mesmo. 
-O botão de voltar é apagar o texto, pode ser tanto na escrita tanto no X do input.
+
+O botão de voltar é apagar o texto, pode ser tanto na escrita como no X do input.
 
 Sobre responsividade, fiz de um jeito automático, mas não é um responsivo 100%, mas da pra usar em várias telas 
 
