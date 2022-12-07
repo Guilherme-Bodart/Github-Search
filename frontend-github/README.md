@@ -13,6 +13,8 @@ Utilizei a libs PrimeNG, primeiramente utilizaria a MaterialUI, mas as cores nã
 
 O botão de voltar é apagar o texto, pode ser tanto na escrita como no X do input.
 
+A estrutura do projeto tem a pasta models, onde coloquei uma parte do modelo do GET do github, as partes que achei que ia utilizar, algumas não utilizei. a pasta da página search-github, onde dentro tem a divisão das páginas home e perfil, com nome search-page e github-profile-page respectivamente, e por fim uma pasta services, onde eu chamo os serviços, endpoints, do github, e o App principal, que já é criado junto com o projeto.
+
 Sobre responsividade, fiz de um jeito automático, mas não é um responsivo 100%, mas da pra usar em várias telas 
 
 Deixarei a baixo o Read-me automático do Angular:
