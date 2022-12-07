@@ -1,5 +1,20 @@
 # FrontendGithub
 
+É preciso ter angular baixado no computador, rode `npm install -g @angular/cli` para o download.
+Versões do node e npm:
+  npm: '8.5.3',
+  node: '18.12.1',
+  
+Rode `npm install` para download das bibliotecas utilizadas, foi utilizada a PrimeNG para o desenvolvimento, baixei o MaterialUI também, porém depois de ver algumas coisas no PrimeNG preferi esta, explicarei melhor depois.
+
+Rode `ng serve` para criar o server de desenvolvimento, ficará em `http://localhost:4200/`, a aplicação cria o build na primeira vez, mas caso precise, rode `ng build`, projeto foi gerado com o angular versão 15.0.2.
+
+Utilizei a libs PrimeNG, primeiramente utilizaria a MaterialUI, mas as cores não combinavam muito, ai fui ver a PrimeNG, tinha as cores e o melhor era o Input que conseguia por um icone dentro de maneira fácil, uma coisa chata que tem usar posição absoluta e outras coisas para se fazer, e os componentes era mais parecidos com o que pedia e pra mim mais agradáveis, usei os ícones do mesmo.
+
+Sobre responsividade, fiz de um jeito automático, mas não é um responsivo 100%, mas da pra usar em várias telas 
+
+Deixarei a baixo o Read-me automático do Angular:
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
 ## Development server
