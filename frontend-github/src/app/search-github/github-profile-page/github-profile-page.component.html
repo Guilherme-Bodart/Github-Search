@@ -6,7 +6,7 @@
     </div>
 
     <div>
-      <span class="p-input-icon-left">
+      <span class="p-input-icon-left p-input-icon-right">
         <i
           class="pi pi-search"
           [ngStyle]="{ color: textError ? '#ff6259' : '' }"
@@ -21,11 +21,20 @@
           [ngClass]="{ 'input-error': textError }"
           (keydown.enter)="searchUserProfile()"
         />
+        <i
+          class="pi pi-times cursor-pointer"
+          [ngStyle]="{ color: textError ? '#ff6259' : '' }"
+          (click)="deleteSearch()"
+        >
+        </i>
       </span>
     </div>
   </div>
 
-  <div class="body-profile">
+  <div class="loading" *ngIf="loading">
+    <i class="pi pi-spin pi-spinner loading-icon"></i>
+  </div>
+  <div class="body-profile" *ngIf="!loading">
     <div class="user-perfil">
       <div class="box-perfil">
         <div class="user-info">

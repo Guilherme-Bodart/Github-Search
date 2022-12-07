@@ -14,6 +14,7 @@ export class GithubProfilePageComponent implements OnInit {
   userProfile: GithubProfile = new GithubProfile({});
   profileRepos: Array<ProfileRepos> = [];
   limitTimeReq = true;
+  loading = true;
 
   constructor(
     private _githubService: GithubService,
@@ -27,7 +28,13 @@ export class GithubProfilePageComponent implements OnInit {
     this.searchUserProfile();
   }
 
+  deleteSearch(){
+    this.userName = '';
+    this.searchUserProfile();
+  }
+
   searchUserProfile() {
+    this.loading = true;
     if (this.userName && this.limitTimeReq) {
       this._githubService.getGithubProfile(this.userName).subscribe(
         (res) => {
@@ -45,6 +52,7 @@ export class GithubProfilePageComponent implements OnInit {
               });
               this.textError = false;
               this.limitTimeReq = false;
+              this.loading = false;
               setTimeout(() => {
                 this.limitTimeReq = true;
               }, 500);
